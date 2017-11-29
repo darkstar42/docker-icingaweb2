@@ -4,12 +4,10 @@ MAINTAINER Christoph Wiechert <wio@psitrax.de>
 
 ENV REFRESHED_AT="2017-11-27"\
     ICINGAWEB_VERSION="2.5.0" \
-    DIRECTOR_VERSION="1.4.2" \
     CUBE_VERSION="1.0.1" \
     BUSINESSPROCESS_VERSION="2.1.0" \
     TIMEZONE="UTC" \
     ICINGAWEB_AUTOCONF=true \
-    DIRECTOR_INSERT_DEFAULTS=true \
     ICINGA_API_PASS="super-secret" \
     WEB_DB_TYPE="mysql" \
     WEB_DB_HOST="mysql" \
@@ -21,8 +19,7 @@ ENV REFRESHED_AT="2017-11-27"\
     IDO_DB_HOST="" \
     IDO_DB_USER="" \
     IDO_DB_PASS="" \
-    IDO_DB="icinga2" \
-    DIRECTOR_DB="director"
+    IDO_DB="icinga2"
 
 RUN apk add --no-cache \
       mysql-client \
@@ -34,10 +31,6 @@ RUN apk add --no-cache \
     mkdir /icingaweb2 && \
     wget -q -O - https://github.com/Icinga/icingaweb2/archive/v${ICINGAWEB_VERSION}.tar.gz \
       | tar xz --strip 1 -C /icingaweb2 && \
-    echo "Fetch Module Director ${DIRECTOR_VERSION}" && \
-    mkdir -p /icingaweb2/modules/director && \
-    wget -q -O - https://github.com/Icinga/icingaweb2-module-director/archive/v${DIRECTOR_VERSION}.tar.gz \
-      | tar xz --strip 1 -C /icingaweb2/modules/director && \
     ln -s /icingaweb2/bin/icingacli /usr/bin/icingacli && \
     echo "Fetch Module Cube ${CUBE_VERSION}" && \
     mkdir -p /icingaweb2/modules/cube && \

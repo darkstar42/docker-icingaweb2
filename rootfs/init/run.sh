@@ -10,7 +10,6 @@ fi
 # Run setups
 [ -x /init/icingaweb2-setup.sh ] && /init/icingaweb2-setup.sh
 [ -x /init/mysql-setup.sh ] && /init/mysql-setup.sh
-[ -x /init/director-setup.sh ] && /init/director-setup.sh
 
 # Apache gets grumpy about PID files pre-existing
 rm -f /var/run/apache2/apache2.pid

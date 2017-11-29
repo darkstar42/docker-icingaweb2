@@ -6,11 +6,10 @@
 [![Docker Automated buil](https://img.shields.io/docker/automated/psitrax/icingaweb2.svg)](https://hub.docker.com/r/psitrax/icingaweb2/)
 
 * Icingaweb2 v2.4.2
-  * Director v1.4.0
   * Cube v1.0.0
   * Businessprocess v2.0.0
 * Alpine based
-* Automated Database and Director initialization and update
+* Automated Database initialization and update
 * Waits at least 60 seconds for database to come up
 * Requires MySQL/MariaDB
 * Docker-Healthcheck support
@@ -49,7 +48,6 @@ sudo docker run \
 
 * `TIMEZONE=UTC`: Timezone
 * `ICINGAWEB_AUTOCONFIG=true`: Set to false to disable auto configuration
-* `DIRECTOR_INSERT_DEFAULTS=true`: Insert some defaults for Icinga Director
 * `ICINGA_API_PASS`: Password Icinga2 API user `icingaweb2` 
 
 #### MySQL for Icingaweb
@@ -58,7 +56,6 @@ sudo docker run \
 * `WEB_DB_USER=root`: Database User
 * `WEB_DB_PASS=root`: Database Password
 * `WEB_DB=icingaweb`: Database Name
-* `DIRECTOR_DB`: Database Name for Director
 
 #### MySQL for Icinga IDO
 * Uses Icingaweb connection if not specified
